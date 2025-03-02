@@ -1,12 +1,69 @@
-# React + Vite
+# FreeSWITCH WebRTC Functionality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates the integration of FreeSWITCH WebRTC functionalities using the Verto protocol within a React application. The application enables real-time audio and video communication using WebRTC, providing functionalities such as dialing, hanging up, transferring calls, muting, and holding.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication:** Login using SIP credentials.
+- **WebRTC Support:** Audio and video calling using WebRTC.
+- **Real-time Communication:** Call management using Verto.
+- **Dialpad Interface:** Dial numbers and make calls.
+- **Call Controls:** Mute, hold, and transfer calls.
+- **Live Video Streaming:** Local and remote video display.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js** - Frontend framework
+- **Material UI** - UI components for styling
+- **FreeSWITCH** - SIP server for handling WebRTC calls
+- **Verto.js** - FreeSWITCH Verto protocol library
+- **WebRTC** - Real-time media streaming
+
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/ngecu/FreeSwitch-WebRTC-Client.git
+
+   ```
+2. Install dependencies:
+   ```sh
+   yarn install
+   ```
+3. Start the development server:
+   ```sh
+   yarn dev
+   ```
+
+## Usage
+
+1. Enter your SIP credentials (login, password, socket URL) in the form.
+2. Click "Create Verto Instance" to initialize the WebRTC connection.
+3. Use the dial pad to enter a number and click the call button.
+4. Use the provided buttons to hang up, mute, hold, or transfer the call.
+5. View local and remote video streams.
+
+## FreeSWITCH Configuration
+
+Ensure your FreeSWITCH server is properly configured to handle WebRTC calls:
+
+- **Enable WebRTC Support:**
+  ```xml
+  <param name="websocket-port" value="8082" />
+  ```
+- **Configure Verto:** Ensure `verto.conf.xml` is correctly set up.
+- **Enable STUN/TURN:** Configure NAT traversal settings if required.
+
+## Troubleshooting
+
+- **No Audio/Video?** Ensure microphone and camera permissions are granted.
+- **Cannot Connect?** Verify your FreeSWITCH server is accessible and correctly configured.
+- **Call Drops?** Check WebRTC network configurations and STUN/TURN settings.
+
+## Contributing
+
+Contributions are welcome! Please submit issues or pull requests via GitHub.
+
+## License
+
+This project is licensed under the MIT License.
