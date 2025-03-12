@@ -17,7 +17,7 @@ const DialPad = () => {
 
   return (
     <Card className="dial-pad" sx={{borderRadius:"24px",boxShadow:"none"}}>
-    <CardContent>
+    <CardContent sx={{p:4}}>
       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center",mb:2 }}>
         <Typography variant="h6" className="phone-number" sx={{fontWeight: 600,fontSize: "24px",lineHeight: "32px",textAlign: "center",color: "#000000"}}>{phoneNumber}</Typography>
         <IconButton className="clear-btn" onClick={handleClear} sx={{ background: "#C1EFAF", borderRadius: "0" }}>

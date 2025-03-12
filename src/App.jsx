@@ -31,7 +31,7 @@ const App = () => {
     <div className="call-ui">
       <Container sx={{ mt: 2 }}>
       <Header />
-    <Grid container spacing={2} className="call-body">
+    <Grid container spacing={3} className="call-body">
       <Grid item md={9} xs={12} >
         <CallScreen />
       </Grid>

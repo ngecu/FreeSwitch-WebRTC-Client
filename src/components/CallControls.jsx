@@ -16,31 +16,31 @@ const CallControls = () => (
             <Container sx={{my:2}}>
             <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#fff",padding:"10px",marginBottom:"5px"}} >
+                <IconButton  className="control-btn" sx={{background:"#fff",padding:"15px",marginBottom:"5px",border:"solid #E5E7EB 0.2px"}} >
                     <BiMicrophoneOff color="#4B5563" />
                 </IconButton>
                 
-                <Typography variant="body2">Mute</Typography>
+                <Typography className="control-name" variant="body2">Mute</Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#fff",padding:"10px",marginBottom:"5px"}} >
+                <IconButton  className="control-btn" sx={{background:"#fff",padding:"15px",marginBottom:"5px",border:"solid #E5E7EB 0.2px"}} >
                     <MdOutlinePhonePaused color="#4B5563" />
                 </IconButton>
                 
-                <Typography variant="body2">Hold</Typography>
+                <Typography className="control-name" variant="body2">Hold</Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#fff",padding:"10px",marginBottom:"5px"}} >
+                <IconButton  className="control-btn" sx={{background:"#fff",padding:"15px",marginBottom:"5px",border:"solid #E5E7EB 0.2px"}} >
                     <BsTelephoneForward color="#4B5563" />
                 </IconButton>
                 
-                <Typography variant="body2">Forward</Typography>
+                <Typography className="control-name" variant="body2">Forward</Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#FF3B30",padding:"10px",marginBottom:"5px",height: "100%",width: "68px"}} >
+                <IconButton  className="control-btn" sx={{background:"#FF3B30",padding:"10px",marginBottom:"5px",height: "100%",width: "70px"}} >
                     <IoCall   color="#fff" />
                 </IconButton>
                 
@@ -48,29 +48,29 @@ const CallControls = () => (
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#fff",padding:"10px",marginBottom:"5px"}} >
+                <IconButton  className="control-btn" sx={{background:"#fff",padding:"15px",marginBottom:"5px",border:"solid #E5E7EB 0.2px"}} >
                     <BsGrid  color="#4B5563" />
                 </IconButton>
                 
-                <Typography variant="body2">Mute</Typography>
+                <Typography className="control-name" variant="body2">Mute</Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#fff",padding:"10px",marginBottom:"5px"}} >
+                <IconButton  className="control-btn" sx={{background:"#fff",padding:"15px",marginBottom:"5px",border:"solid #E5E7EB 0.2px"}} >
                     
                     <HiOutlineSpeakerWave color="#4B5563" />
                 </IconButton>
                 
-                <Typography variant="body2">Speaker</Typography>
+                <Typography className="control-name" variant="body2">Speaker</Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <IconButton  className="control-btn" sx={{background:"#fff",padding:"10px",marginBottom:"5px"}} >
+                <IconButton  className="control-btn" sx={{background:"#fff",padding:"15px",marginBottom:"5px",border:"solid #E5E7EB 0.2px"}} >
                     
                     <CiVideoOn color="#4B5563" />
                 </IconButton>
                 
-                <Typography variant="body2">Video</Typography>
+                <Typography className="control-name" variant="body2">Video</Typography>
                 </Box>
 
                

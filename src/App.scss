@@ -36,9 +36,9 @@ top: 18px;
 
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
+font-weight: 400 !important;
+font-size: 12px !important;
+line-height: 16px !important;
 /* identical to box height, or 133% */
 letter-spacing: 0.02em;
 font-feature-settings: 'liga' off;
@@ -52,9 +52,9 @@ color: #808080;
     background-color: #C1EFAF;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    color: #022100;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #022100 !important;
     box-shadow: 0px 4px 4px rgba(28, 117, 253, 0.3);
     border-radius: 12px;
     padding: 0 5px;
@@ -121,4 +121,15 @@ color: #808080;
   .dial-pad{
     border-radius: $corner-medium !important;
     box-shadow: none;
+  }
+
+  .control-name{
+
+    font-family: 'Montserrat';
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 17px !important;
+    text-align: right;
+    color: #374151;
   }
