@@ -14,7 +14,6 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^6.4.6",
-    "@rollup/rollup-linux-x64-gnu": "^4.36.0",
     "jquery": "^3.7.1",
     "jquery-json": "^2.6.0",
     "react": "^19.0.0",
@@ -26,6 +25,9 @@
     "socket.io-client": "^4.8.1",
     "verto": "^0.1.1",
     "webrtc-adapter": "^9.0.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
