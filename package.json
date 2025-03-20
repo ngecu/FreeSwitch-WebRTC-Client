@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -20,6 +20,8 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-toastify": "^11.0.5",
+    "sip": "^0.0.6",
+    "sip.js": "^0.21.2",
     "socket.io-client": "^4.8.1",
     "verto": "^0.1.1",
     "webrtc-adapter": "^9.0.1"
