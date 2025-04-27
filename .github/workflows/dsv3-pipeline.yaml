@@ -1,4 +1,5 @@
 name: dsv3 Build and Deploy pipeline
+
 on:
   push:
     branches:
@@ -18,11 +19,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # or '20' depending on your project (must match your local node)
+          node-version: '20' # Make sure this matches your local environment
 
       - name: Clean install dependencies
         run: |
+          rm -rf node_modules package-lock.json
           npm install
+
+      - name: Verify Vite installation
+        run: |
+          npm list vite @vitejs/plugin-react
 
       - name: Build project
         run: |
