@@ -34,7 +34,7 @@ jobs:
           touch ~/.ssh/known_hosts
           ssh-keyscan 20.164.145.113 >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.VM_SSH_KEY }}"
+          echo "${{ secrets.VM_SSH_KEY }}" | ssh-add -
       
       - name: Deploy to VM
         run: |
