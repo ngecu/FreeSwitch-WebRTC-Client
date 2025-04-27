@@ -1,0 +1,36 @@
+name: dsv3 Build and Deploy pipeline
+on:
+  push:
+    branches:
+      - main  # Main development branch
+  workflow_dispatch:
+  repository_dispatch:
+    types: [tekton-trigger]  # Custom event type
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          npm install 
+
+      - name: Build project
+        run: |
+          npm run build  
+
+      - name: Archive build artifacts
+        run: |
+          mkdir -p output
+          cp -r dist/* output/  
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: output/
