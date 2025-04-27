@@ -15,10 +15,10 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v2
 
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: '18' # or '20' depending on your project (must match your local node)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # or '20' depending on your project (must match your local node)
 
       - name: Clean install dependencies
         run: |
