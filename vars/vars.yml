@@ -1,0 +1,3 @@
+source: "../src"
+project_dir: "/home/devuser/EvolveAI-App-Backend"  
+pm2_path: "/home/devuser/.nvm/versions/node/v22.12.0/bin/pm2"

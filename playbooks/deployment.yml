@@ -1,0 +1,49 @@
+- name: Connect to VM, update new changes, and restart pm2
+  hosts: all
+  become: true
+  vars_files:
+    - ../vars/vars.yml  # Include external variables file
+
+    
+  tasks:
+    - name: Synchronize src and dest, excluding node_modules subfolders
+      ansible.builtin.synchronize:
+        src: "../{{ source }}"
+        dest: "{{ project_dir }}"
+        rsync_opts:
+          - "--exclude=**/node_modules"
+
+    - name: Copy env
+      copy:
+        src: "../.env"
+        dest: "{{ project_dir }}/.env"
+
+    - name: Copy package.json
+      copy:
+        src: "../package.json"
+        dest: "{{ project_dir }}/package.json"
+
+    - name: Copy pm2 config
+      copy:
+        src: "../pm2.config.js"
+        dest: "{{ project_dir }}/pm2.config.js"
+
+    - name: Install dependencies with npm
+      ansible.builtin.shell:
+        cmd: npm install
+        chdir: "{{ project_dir }}"
+
+
+    - name: Start devbackend with process config file, if not running
+      pm2:
+        name: devbackend
+        config: "{{ project_dir }}/pm2.config.js"
+        state: started
+        executable: "{{ pm2_path }}"
+
+    - name: Restart devbackend, in all cases
+      pm2:
+        name: devbackend
+        state: restarted
+        chdir: "{{ project_dir }}" 
+        executable: "{{ pm2_path }}"
