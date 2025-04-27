@@ -38,7 +38,7 @@ jobs:
       
       - name: Deploy to VM
         run: |
-          rsync -avz --delete --exclude=node_modules ./dist/ user@34.123.45.67:/var/www/html/
+          rsync -avz --delete --exclude=node_modules ./dist/ user@20.164.145.113:/var/www/html/
       
 
           
