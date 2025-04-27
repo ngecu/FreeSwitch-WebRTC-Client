@@ -30,11 +30,37 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
+          set -e  # Exit on error
+      
+          # Creating .ssh directory if not present
           mkdir -p ~/.ssh
+      
+          # Create known_hosts file if not present
           touch ~/.ssh/known_hosts
-          ssh-keyscan 20.164.145.113 >> ~/.ssh/known_hosts
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          echo "${{ secrets.VM_SSH_KEY }}" | ssh-add -
+          
+          # Adding the IP to known_hosts
+          echo "Adding host to known_hosts..."
+          if ! ssh-keyscan 20.164.145.113 >> ~/.ssh/known_hosts; then
+            echo "Error: Failed to add host to known_hosts"
+            exit 1
+          fi
+          
+          # Starting the ssh-agent
+          echo "Starting ssh-agent..."
+          if ! ssh-agent -a $SSH_AUTH_SOCK > /dev/null; then
+            echo "Error: Failed to start ssh-agent"
+            exit 1
+          fi
+          
+          # Adding SSH private key
+          echo "Adding SSH key..."
+          if ! echo "${{ secrets.VM_SSH_KEY }}" | ssh-add -; then
+            echo "Error: Failed to add SSH key"
+            exit 1
+          fi
+      
+          echo "SSH setup complete"
+      
       
       - name: Deploy to VM
         run: |
