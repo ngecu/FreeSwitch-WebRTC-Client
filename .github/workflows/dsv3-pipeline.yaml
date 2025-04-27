@@ -2,11 +2,10 @@ name: dsv3 Build and Deploy pipeline
 on:
   push:
     branches:
-      - main  # Main development branch
+      - main
   workflow_dispatch:
   repository_dispatch:
-    types: [tekton-trigger]  # Custom event type
-
+    types: [tekton-trigger]
 
 jobs:
   build:
@@ -16,18 +15,27 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # Match your local version
+
       - name: Install dependencies
         run: |
-          npm install 
+          npm install
+
+      - name: Rebuild native modules
+        run: |
+          npm rebuild
 
       - name: Build project
         run: |
-          npm run build  
+          npm run build
 
       - name: Archive build artifacts
         run: |
           mkdir -p output
-          cp -r dist/* output/  
+          cp -r dist/* output/
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
